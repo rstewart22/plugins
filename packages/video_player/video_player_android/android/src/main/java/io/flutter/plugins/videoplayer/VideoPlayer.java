@@ -33,6 +33,7 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSource;
 import com.google.android.exoplayer2.util.Util;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.view.TextureRegistry;
+import io.flutter.Log;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -283,6 +284,8 @@ final class VideoPlayer {
         }
         event.put("width", width);
         event.put("height", height);
+
+        Log.d("ROTATION DEGREES", rotationDegrees);
 
         // Rotating the video with ExoPlayer does not seem to be possible with a Surface,
         // so inform the Flutter code that the widget needs to be rotated to prevent
