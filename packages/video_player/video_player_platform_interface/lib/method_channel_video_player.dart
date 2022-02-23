@@ -112,7 +112,8 @@ class MethodChannelVideoPlayer extends VideoPlayerPlatform {
         case 'initialized':
           return VideoEvent(
             eventType: VideoEventType.initialized,
-            rotationCorrection: map['rotationCorrection']?.toDouble() ?? 0.0,
+            rotationCorrection:
+                (map['rotationCorrection'] as double?)?.toDouble() ?? 0.0,
             duration: Duration(milliseconds: map['duration']! as int),
             size: Size((map['width'] as num?)?.toDouble() ?? 0.0,
                 (map['height'] as num?)?.toDouble() ?? 0.0),
